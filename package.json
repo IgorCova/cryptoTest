@@ -1,0 +1,22 @@
+{
+  "name": "cryp",
+  "version": "1.0.0",
+  "description": "Extract last ETH 100 blocks and give reachest man",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cova",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^14.0.27",
+    "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "@types/bignumber.js": "^5.0.0",
+    "axios": "^0.19.2",
+    "bignumber": "^1.1.0",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6"
+  }
+}
