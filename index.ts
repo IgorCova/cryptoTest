@@ -6,16 +6,6 @@ class BlockExplorer {
   private readonly request = require("request-promise");
 
   async init() {
-    class Address {
-      address: string;
-      value: number;
-
-      constructor(address: string, value: number) {
-        this.address = address;
-        this.value = value;
-      }
-    }
-
     interface HashTable<T> {
       [key: string]: T;
     }
@@ -34,6 +24,11 @@ class BlockExplorer {
           addresses[tx.to] = val;
         } else {
           addresses[tx.to] = val.plus(addresses[tx.to]);
+        }
+        if (!addresses[tx.from]) {
+          addresses[tx.from] = val;
+        } else {
+          addresses[tx.from] = val.minus(addresses[tx.from]);
         }
       });
       blocks--;
