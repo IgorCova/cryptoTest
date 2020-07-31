@@ -28,7 +28,7 @@ class BlockExplorer {
         if (!addresses[tx.from]) {
           addresses[tx.from] = val;
         } else {
-          addresses[tx.from] = val.minus(addresses[tx.from]);
+          addresses[tx.from] = val.plus(addresses[tx.from]);
         }
       });
       blocks--;
@@ -44,7 +44,7 @@ class BlockExplorer {
       }
     });
 
-    console.log('richest:', richAddress, 'traffic:', rich.toString(10));
+    console.log('richest:', richAddress, 'volume:', rich.toString(10));
   }
 
   private async getBlockCount() {
